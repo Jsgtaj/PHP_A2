@@ -16,8 +16,20 @@
       <li><a href="index.php">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a href="register.php">Register</a></li>
-      <li><a href="login.php">Login</a></li>
+      <?php
+      session_start();
+      if (!$_SESSION) {
+        echo   "<li><a href='register.php'>Register</a></li>
+        <li><a href='login.php'>Log In</a></li>";
+      } else {
+      }
+      ?>
+      <?php
+      if ($_SESSION) {
+        echo   "<li><a href='logout.php'>Log Out</a></li>";
+      } else {
+      }
+      ?>
     </ul>
   </nav>
   <section class="wrapper">

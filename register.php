@@ -7,7 +7,7 @@ require "header.php";
   <fieldset>
     <legend>User Info:</legend>
     <label for="username">Username:</label>
-    <input name="username" type="text" placeholder="Username" required>
+    <input name="username" type="email" placeholder="Username" required>
     <label for="password">Password:</label>
     <input name="password" type="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
     <label for="passwordConfirm">Confirm your Password:</label>
