@@ -1,0 +1,94 @@
+/*_____________________________General_____________________________*/
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+body {
+  color: #111;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  flex: 1;
+}
+h1 {
+  font-size: 3rem;
+}
+p {
+  font-size: 1.9rem;
+}
+/*_____________________________Header_____________________________*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #732893;
+}
+nav img {
+  max-height: 80px;
+  width: auto;
+  margin: 1rem;
+  margin-left: 4rem;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: auto;
+  margin-right: 2rem;
+}
+nav ul li {
+  margin: 0rem 2rem 0rem 2rem;
+}
+nav ul li::after,
+nav ul li:first-of-type::before {
+  content: "";
+  margin-left: 4rem;
+  padding: 5rem 0rem 4rem 0rem;
+  border-right: solid 0.2rem #111;
+}
+nav ul li:first-of-type::before {
+  margin-right: 4rem;
+}
+nav ul li a,
+nav ul li a:link,
+nav ul li a:visited {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: inherit;
+  text-decoration: none;
+}
+nav ul li a:focus,
+nav ul li a:hover,
+nav ul li a:active {
+  color: #000;
+  text-decoration: underline;
+}
+/*_____________________________Footer_____________________________*/
+footer {
+  display: flex;
+  background-color: #732893;
+  justify-content: center;
+}
+footer p {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+/*_____________________________Forms_____________________________*/
+form {
+  font-size: 2rem;
+}
+legend {
+  display: none;
+}
+form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+form input {
+  font-size: inherit;
+}
