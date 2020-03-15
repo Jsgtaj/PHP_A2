@@ -1,6 +1,7 @@
 /*_____________________________General_____________________________*/
 html {
   height: 100%;
+  width: auto;
   box-sizing: border-box;
   font-size: 10px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -8,6 +9,7 @@ html {
 body {
   color: #111;
   height: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -21,10 +23,25 @@ body {
 h1 {
   text-align: center;
   font-size: 3rem;
+  margin-bottom: 1.5rem;
 }
 p {
   text-align: center;
   font-size: 1.9rem;
+}
+a,
+a:link {
+  color: #8233a3;
+}
+a:visited {
+  color: #af74c9;
+}
+a:focus,
+a:hover {
+  font-weight: bold;
+}
+a:active {
+  color: #8233a3;
 }
 /*_____________________________Header_____________________________*/
 nav {
@@ -107,6 +124,7 @@ form fieldset {
   display: flex;
   flex-direction: column;
   border: none;
+  margin: 0;
 }
 form input,
 form button {
@@ -130,6 +148,7 @@ form button:hover,
 form button:active {
   background-color: #8233a3;
 }
+/*_____Remove autofill styling_____*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -140,6 +159,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-box-shadow: inherit;
+  font-size: 1.9rem !important;
   transition: background-color 10000s ease-in 0s;
-  /*_____Removes_____*/
+  /*_____Remove autofill styling_____*/
 }
