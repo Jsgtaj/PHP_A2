@@ -12,7 +12,7 @@ require "header.php";
     <input name="password" type="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
     <label for="passwordConfirm">Confirm your Password:</label>
     <input name="passwordConfirm" type="password" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-    <p>Password needs at least 1 number, one lowercase letter,<br> one uppercase letter, and be at least 8 characters long.</p>
+    <p>Password needs at least one number, one lowercase letter,<br> one uppercase letter, and has to be at least 8 characters long.</p>
     <button type="submit">Sign up</button>
   </fieldset>
 </form>
