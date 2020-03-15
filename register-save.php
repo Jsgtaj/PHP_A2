@@ -24,7 +24,7 @@ if (empty($user) || empty($pass) || empty($passConf)) {
   } else {
     $sql = "INSERT INTO cms_users (username,`password`) VALUES (:user,:pass)";
     $comm = $db->prepare($sql);
-    $hashpass = password_hash($hashpass, PASSWORD_DEFAULT);
+    $hashpass = password_hash($pass, PASSWORD_DEFAULT);
     $comm->bindParam(":user", $user, PDO::PARAM_STR, 50);
     $comm->bindParam(":pass", $hashpass, PDO::PARAM_STR, 255);
 
