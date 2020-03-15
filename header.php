@@ -12,12 +12,12 @@
 <body>
   <nav>
     <a href="index.php"><img src="img/php_web_builder_logo.png" alt="php web builder logo"></a>
-    <ul>
+    <ul class="<?php echo $title ?>">
       <li><a href="index.php">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
       <li><a href="register.php">Register</a></li>
-      <li><a href="#">Login</a></li>
+      <li><a href="login.php">Login</a></li>
     </ul>
   </nav>
   <section class="wrapper">

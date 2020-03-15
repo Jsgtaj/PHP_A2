@@ -1,5 +1,5 @@
 <?php
-$title = "Home";
+$title = "Register";
 require "header.php";
 ?>
 <h1>Sign up below!</h1>
@@ -7,11 +7,13 @@ require "header.php";
   <fieldset>
     <legend>User Info:</legend>
     <label for="username">Username:</label>
-    <input name="username" type="text" placeholder="Username">
+    <input name="username" type="text" placeholder="Username" required>
     <label for="password">Password:</label>
-    <input name="password" type="password" placeholder="Password">
+    <input name="password" type="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
     <label for="passwordConfirm">Confirm your Password:</label>
-    <input name="passwordConfirm" type="password" placeholder="Confirm Password">
+    <input name="passwordConfirm" type="password" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+    <p>Password needs at least 1 number, one lowercase letter,<br> one uppercase letter, and be at least 8 characters long.</p>
+    <button type="submit">Submit</button>
   </fieldset>
 </form>
 </body>

@@ -15,18 +15,22 @@ body {
 }
 .wrapper {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 h1 {
+  text-align: center;
   font-size: 3rem;
 }
 p {
+  text-align: center;
   font-size: 1.9rem;
 }
 /*_____________________________Header_____________________________*/
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: #732893;
+  background-color: #8233a3;
 }
 nav img {
   max-height: 80px;
@@ -40,18 +44,18 @@ nav ul {
   margin: auto;
   margin-right: 2rem;
 }
+nav .Home li:nth-of-type(1) {
+  background-color: #af74c9;
+}
+nav .Register li:nth-of-type(4) {
+  background-color: #af74c9;
+}
 nav ul li {
-  margin: 0rem 2rem 0rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
+  border-left: #111 solid 0.2rem;
 }
-nav ul li::after,
-nav ul li:first-of-type::before {
-  content: "";
-  margin-left: 4rem;
-  padding: 5rem 0rem 4rem 0rem;
-  border-right: solid 0.2rem #111;
-}
-nav ul li:first-of-type::before {
-  margin-right: 4rem;
+nav ul li:last-of-type {
+  border-right: #111 solid 0.2rem;
 }
 nav ul li a,
 nav ul li a:link,
@@ -70,7 +74,7 @@ nav ul li a:active {
 /*_____________________________Footer_____________________________*/
 footer {
   display: flex;
-  background-color: #732893;
+  background-color: #8233a3;
   justify-content: center;
 }
 footer p {
@@ -79,16 +83,57 @@ footer p {
 }
 /*_____________________________Forms_____________________________*/
 form {
-  font-size: 2rem;
+  font-size: 1.9rem;
+  text-align: center;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 1.6rem;
 }
 legend {
   display: none;
+}
+form * {
+  border: none;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 form fieldset {
   display: flex;
   flex-direction: column;
   border: none;
 }
-form input {
+form input,
+form button {
   font-size: inherit;
+  padding: 0.6rem;
+  border-radius: 0.2rem;
+  background-color: #cac2ce;
+}
+form p {
+  font-size: 1.6rem;
+  margin-top: 3rem;
+}
+form button {
+  margin: auto;
+  padding: 0.6rem 3rem 0.6rem 3rem;
+  margin-top: 3rem;
+  background-color: #af74c9;
+}
+form button:focus,
+form button:hover,
+form button:active {
+  background-color: #8233a3;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: inherit;
+  transition: background-color 10000s ease-in 0s;
+  /*_____Removes_____*/
 }
