@@ -1,6 +1,7 @@
 <?php
 $title = "Register";
 require "header.php";
+// Adding header, setting title
 ?>
 <h1>Sign up below!</h1>
 <form action="register-save.php" method="POST">
@@ -15,9 +16,11 @@ require "header.php";
     <p>Passwords need at least one number, one lowercase letter,<br>
       one uppercase letter, and have to be at least 8 characters long.</p>
     <button type="submit">Sign up</button>
+    <!--fields to be posted upon registration-->
   </fieldset>
 </form>
 </body>
 <?php
 require "footer.php";
+// Adding footer
 ?>

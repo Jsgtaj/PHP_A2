@@ -1,6 +1,7 @@
 <?php
 $title = "Home";
 require "header.php";
+// Adding header, setting title
 ?>
 
 <h1>Welcome to the PHP Web Builder!</h1>
@@ -8,4 +9,5 @@ require "header.php";
 
 <?php
 require "footer.php";
+// Adding footer
 ?>

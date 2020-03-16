@@ -43,6 +43,7 @@ a:hover {
 a:active {
   color: #8233a3;
 }
+/*_____________________________General End_____________________________*/
 /*_____________________________Header_____________________________*/
 nav {
   display: flex;
@@ -94,6 +95,7 @@ nav ul li a:active {
   color: #000;
   text-decoration: underline;
 }
+/*_____________________________Header End_____________________________*/
 /*_____________________________Footer_____________________________*/
 footer {
   display: flex;
@@ -104,6 +106,7 @@ footer p {
   font-size: 1.5rem;
   font-weight: 900;
 }
+/*_____________________________Footer End_____________________________*/
 /*_____________________________Forms_____________________________*/
 form {
   font-size: 1.9rem;
@@ -163,3 +166,4 @@ select:-webkit-autofill:focus {
   transition: background-color 10000s ease-in 0s;
   /*_____Remove autofill styling_____*/
 }
+/*_____________________________Forms End_____________________________*/
