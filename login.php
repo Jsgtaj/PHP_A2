@@ -8,9 +8,9 @@ require "header.php";
   <fieldset>
     <legend>User Info:</legend>
     <label for="username">Username:</label>
-    <input name="username" type="text" placeholder="Username" required>
+    <input name="username" type="text" placeholder="username" required>
     <label for="password">Password:</label>
-    <input name="password" type="password" placeholder="Password" required>
+    <input name="password" type="password" placeholder="password" required>
     <button type="submit">Log in</button>
     <!--fields to be posted upon login-->
   </fieldset>

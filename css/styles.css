@@ -31,7 +31,7 @@ p {
 }
 a,
 a:link {
-  color: #8233a3;
+  color: #9341b6;
 }
 a:visited {
   color: #af74c9;
@@ -41,14 +41,14 @@ a:hover {
   font-weight: bold;
 }
 a:active {
-  color: #8233a3;
+  color: #9341b6;
 }
 /*_____________________________General End_____________________________*/
 /*_____________________________Header_____________________________*/
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: #8233a3;
+  background-color: #9341b6;
 }
 /*___Nav highlighting__*/
 nav .Home li:nth-of-type(1) {
@@ -99,7 +99,7 @@ nav ul li a:active {
 /*_____________________________Footer_____________________________*/
 footer {
   display: flex;
-  background-color: #8233a3;
+  background-color: #9341b6;
   justify-content: center;
 }
 footer p {
@@ -149,7 +149,7 @@ form button {
 form button:focus,
 form button:hover,
 form button:active {
-  background-color: #8233a3;
+  background-color: #9341b6;
 }
 /*_____Remove autofill styling_____*/
 input:-webkit-autofill,
