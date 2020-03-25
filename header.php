@@ -12,12 +12,10 @@
 
 <body>
   <nav>
-    <a href="index.php"><img src="img/php_web_builder_logo.png" alt="php web builder logo"></a>
-    <ul class="<?php echo $title ?>">
-      <!--ul class is echoed from body pages to set highlighted style-->
-      <li><a href="index.php">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+    <a href="login.php"><img src="img/php_web_builder_logo.png" alt="php web builder logo"></a>
+    <ul id="i<?php /*echo $id*/ ?>" class="<?php echo $title ?>">
+      <!--ul id and class echoed from pages to set highlighted style-->
+      <!--<li><a href="index.php?page_id=<?php /*echo $id */ ?>">Home</a></li>-->
       <?php
       session_start();
       if (!$_SESSION) {

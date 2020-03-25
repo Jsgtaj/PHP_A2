@@ -51,13 +51,40 @@ nav {
   background-color: #9341b6;
 }
 /*___Nav highlighting__*/
-nav .Home li:nth-of-type(1) {
+nav #i1 li:nth-of-type(1) {
   background-color: #af74c9;
 }
-nav .Register li:nth-of-type(4) {
+nav #i2 li:nth-of-type(2) {
   background-color: #af74c9;
 }
-nav .Login li:nth-of-type(5) {
+nav #i3 li:nth-of-type(3) {
+  background-color: #af74c9;
+}
+nav #i4 li:nth-of-type(4) {
+  background-color: #af74c9;
+}
+nav #i5 li:nth-of-type(5) {
+  background-color: #af74c9;
+}
+nav #i6 li:nth-of-type(6) {
+  background-color: #af74c9;
+}
+nav #i7 li:nth-of-type(7) {
+  background-color: #af74c9;
+}
+nav #i8 li:nth-of-type(8) {
+  background-color: #af74c9;
+}
+nav #i9 li:nth-of-type(9) {
+  background-color: #af74c9;
+}
+nav #i10 li:nth-of-type(10) {
+  background-color: #af74c9;
+}
+nav .Register li:nth-last-of-type(2) {
+  background-color: #af74c9;
+}
+nav .Login li:nth-last-of-type(1) {
   background-color: #af74c9;
 }
 /*___Nav highlighting__*/
