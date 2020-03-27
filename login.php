@@ -1,7 +1,8 @@
 <?php
 $title = "Login";
+$position = "p1";
 require "header.php";
-// Adding header, setting title
+// Adding header, setting title, position used for highlighting in header
 ?>
 <h1>Log in below!</h1>
 <form action="login-validate.php" method="POST">

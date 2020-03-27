@@ -1,7 +1,8 @@
 <?php
 $title = "Register";
+$position = "p2";
 require "header.php";
-// Adding header, setting title
+// Adding header, setting title, position used for highlighting in header
 ?>
 <h1>Sign up below!</h1>
 <form action="register-save.php" method="POST">

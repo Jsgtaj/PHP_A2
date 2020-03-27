@@ -16,41 +16,58 @@ body {
   padding: 0;
 }
 .wrapper {
+  margin-top: 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
+  text-align: center;
 }
 h1 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  margin-bottom: 1.4rem;
+}
+h2 {
+  font-size: 2.9rem;
 }
 p {
+  margin-block-start: 1rem;
   text-align: center;
-  font-size: 1.9rem;
+  font-size: 2rem;
 }
 a,
-a:link {
-  color: #9341b6;
-}
+a:link,
 a:visited {
-  color: #af74c9;
+  color: #a878bd;
 }
 a:focus,
-a:hover {
-  font-weight: bold;
-}
+a:hover,
 a:active {
-  color: #9341b6;
+  color: #9337bb;
+  font-weight: bold;
+  text-decoration: underline;
 }
 /*_____________________________General End_____________________________*/
 /*_____________________________Header_____________________________*/
 nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background-color: #9341b6;
 }
-/*___Nav highlighting__*/
+/*___Nav highlighting___*/
+/*___Using created page indices___*/
 nav #i1 li:nth-of-type(1) {
   background-color: #af74c9;
 }
@@ -81,21 +98,34 @@ nav #i9 li:nth-of-type(9) {
 nav #i10 li:nth-of-type(10) {
   background-color: #af74c9;
 }
-nav .Register li:nth-last-of-type(2) {
+/*___Pre-made links ___*/
+nav .p6 li:nth-last-of-type(6) {
   background-color: #af74c9;
 }
-nav .Login li:nth-last-of-type(1) {
+nav .p5 li:nth-last-of-type(5) {
   background-color: #af74c9;
 }
-/*___Nav highlighting__*/
+nav .p4 li:nth-last-of-type(4) {
+  background-color: #af74c9;
+}
+nav .p3 li:nth-last-of-type(3) {
+  background-color: #af74c9;
+}
+nav .p2 li:nth-last-of-type(2) {
+  background-color: #af74c9;
+}
+nav .p1 li:nth-last-of-type(1) {
+  background-color: #af74c9;
+}
 nav img {
   max-height: 80px;
   width: auto;
-  margin: 1rem;
-  margin-left: 4rem;
+  margin: 1rem 4rem 1rem 4rem;
 }
 nav ul {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   list-style: none;
   margin: auto;
   margin-right: 2rem;
@@ -106,6 +136,18 @@ nav ul li {
   border-left: #111 solid 0.2rem;
 }
 nav ul li:last-of-type {
+  border-right: #111 solid 0.2rem;
+}
+
+nav p {
+  padding: 2rem 2rem 2rem 2rem;
+  font-weight: 900;
+  text-align: left;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
+  border-left: #111 solid 0.2rem;
   border-right: #111 solid 0.2rem;
 }
 nav ul li a,
@@ -140,7 +182,7 @@ form {
   text-align: center;
   margin: auto;
   margin-top: 0;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0;
 }
 legend {
   display: none;
@@ -188,6 +230,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
+  box-shadow: inherit;
   -webkit-box-shadow: inherit;
   font-size: 1.9rem !important;
   transition: background-color 10000s ease-in 0s;

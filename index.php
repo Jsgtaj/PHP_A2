@@ -2,7 +2,7 @@
 $title = "";
 $id = "";
 require "header.php";
-// Adding header, setting title
+// Adding header, setting title, title and id will be populated by current page data
 ?>
 
 <?php

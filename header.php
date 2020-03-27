@@ -1,3 +1,5 @@
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +15,34 @@
 <body>
   <nav>
     <a href="login.php"><img src="img/php_web_builder_logo.png" alt="php web builder logo"></a>
-    <ul id="i<?php /*echo $id*/ ?>" class="<?php echo $title ?>">
+    <?php
+    if (!empty($_SESSION['userId'])) {
+      $userId = $_SESSION['username'];
+      echo "<p>Admin:<br>$userId</p>";
+    }
+    ?>
+    <ul id="i<?php /*echo $id*/ ?>" class="<?php echo $position ?>">
       <!--ul id and class echoed from pages to set highlighted style-->
-      <!--<li><a href="index.php?page_id=<?php /*echo $id */ ?>">Home</a></li>-->
       <?php
-      session_start();
-      if (!$_SESSION) {
-        echo   "<li><a href='register.php'>Register</a></li>
-        <li><a href='login.php'>Log In</a></li>";
+      if (empty($_SESSION['userId'])) {
+        //if userId is empty, show register and log in
+        echo "<li><a href='register.php'>Register</a></li>
+      <li><a href='login.php'>Log In</a></li>";
       } else {
-        echo   "<li><a href='logout.php'>Log Out</a></li>";
+        if ($_SESSION["panel"] == true) {
+          //if user has clicked on control panel link, setting panel to true, show control panel links
+          echo "<li><a href='admins.php'>Administrators</a></li>
+          <li><a href='pages.php'>Pages</a></li>
+          <li><a href='logo.php'>Logo</a></li>
+          <li><a href='control-panel-leave.php'>Public Site</a></li>
+          <li><a href='control-panel.php'>Control Panel</a></li>";
+        } else {
+          //user is not in the control panel, show enter control panel link
+          echo "<li><a href='control-panel-enter.php'>Control Panel</a></li>";
+        }
+        //if userId exists, show these links
+        echo "<li><a href='logout.php'>Log Out</a></li>";
       }
-      // If there isn't a session, echo register and log in links, if there is a session, echo log out link
       ?>
     </ul>
   </nav>

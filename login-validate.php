@@ -4,7 +4,7 @@ $pass = $_POST["password"];
 //Getting the posted variables
 require "db.php";
 //linking the pdo setup
-$sql = "SELECT userId, `password` FROM cms_users WHERE username = :user";
+$sql = "SELECT * FROM cms_users WHERE username = :user";
 $cmd = $db->prepare($sql);
 $cmd->bindParam(":user", $user, PDO::PARAM_STR, 50);
 $cmd->execute();
@@ -17,12 +17,18 @@ if (empty($fetch)) {
 } else if (!password_verify($pass, $fetch["password"])) {
   echo  "<a href='login.php'>Back to login</a><br>Username exists, Invalid password.";
   exit();
-  //if there is a username match, but the passwords son't match, exit and echo "Username exists, Invalid password"
+  //if there is a username match, but the passwords don't match, 
+  //exit and echo "Username exists, Invalid password"
 } else {
   session_start();
   $_SESSION["userId"] = $fetch["userId"];
+  $_SESSION["username"] = $fetch["username"];
+  $_SESSION["panel"] = false;
   header("location:index.php");
-  //if there is a username and password match, start a session, make the session variable userId the user's Id, link to index
+  /*if there is a username and password match, start a session
+  make the session variable userId the user's Id, get username for display
+  control panel variable is false on login*/
+  //link to index
 }
 $db = null;
 //close db connection
