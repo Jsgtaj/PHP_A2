@@ -22,16 +22,22 @@ require "header.php";
     foreach ($arr as $admin) {
       echo "</tr><td>" . $admin['username'] . "</td>";
       echo "<td><a href=edit-admin.php?id=" . $admin['userId'] . ">Edit</a></td>";
-      echo '<td><a onclick="return confirmDelete(\'' . $admin["username"] . '\');"';
-      echo "href=delete-dmin.php?user=" . $admin['userId'] . ">Delete</a><tr>";
+      echo '<td><a onclick="return confirmDelete(\'' . $admin["username"] . '\',\'';
+      echo $admin['userId'] . '\',\'' . $_SESSION["userId"] . '\');"';
+      echo "href=delete-admin.php?user=" . $admin['userId'] . ">Delete</a><tr>";
     }
     $db = null;
     ?>
   </tbody>
 </table>
 <script>
-  function confirmDelete(admin) {
-    return confirm(`Are you sure you want to delete ${admin}?`);
+  function confirmDelete(username, currentId, sessionId) {
+    if (currentId == sessionId) {
+      alert(`You cannot delete the current user.`);
+      return false;
+    } else {
+      return confirm(`Are you sure you want to delete ${username}?`);
+    }
   }
 </script>
 <?php

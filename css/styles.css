@@ -7,6 +7,7 @@ html {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 body {
+  font-size: 1.8rem;
   color: #111;
   height: 100%;
   width: auto;
@@ -49,12 +50,12 @@ p {
 a,
 a:link,
 a:visited {
-  color: #a878bd;
+  color: #a767c2;
 }
 a:focus,
 a:hover,
 a:active {
-  color: #9337bb;
+  color: #862aad;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -176,6 +177,31 @@ footer p {
   font-weight: 900;
 }
 /*_____________________________Footer End_____________________________*/
+/*_____________________________Tables_____________________________*/
+table {
+  border-spacing: 0;
+  text-align: center;
+  border-collapse: collapse;
+  border-width: 0;
+  font-size: 2rem;
+}
+table th {
+  line-height: 8rem;
+  border-left: #111 solid 0.2rem;
+}
+table th:first-of-type {
+  line-height: 8rem;
+  border-left: 0;
+}
+table td {
+  padding: 2rem;
+  border-top: #111 solid 0.2rem;
+  border-left: #111 solid 0.2rem;
+}
+table td:first-of-type {
+  border-left: 0;
+}
+/*_____________________________Tables End_____________________________*/
 /*_____________________________Forms_____________________________*/
 form {
   font-size: 1.9rem;
