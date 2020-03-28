@@ -3,6 +3,10 @@ $title = "Edit Administrator";
 $position = "p6";
 require "header.php";
 // Adding header, setting title, position used for highlighting in header
+if (empty($_SESSION["username"])) {
+  header("location:login.php");
+}
+// If there isn't a session running, boot the user back to the login page
 $userId = $_GET["id"];
 require "db.php";
 $sql = "SELECT username FROM cms_users WHERE :userId = `userId`";

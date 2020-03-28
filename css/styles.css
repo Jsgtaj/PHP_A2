@@ -23,6 +23,13 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.wrapper > a {
+  font-size: 2.5rem;
+  text-align: center;
+} /*links echoed to the wrapper*/
+.wrapper > a ~ * {
+  text-align: center;
+} /*anything else echoed to the wrapper*/
 h1,
 h2,
 h3,
