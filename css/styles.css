@@ -5,7 +5,7 @@ html {
   box-sizing: border-box;
   font-size: 10px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
-}
+} /*root font size, family set*/
 body {
   font-size: 1.8rem;
   color: #111;
@@ -127,6 +127,7 @@ nav .p2 li:nth-last-of-type(2) {
 nav .p1 li:nth-last-of-type(1) {
   background-color: #af74c9;
 }
+/*___Nav highlighting end___*/
 nav img {
   max-height: 80px;
   width: auto;

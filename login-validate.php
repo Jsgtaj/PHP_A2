@@ -31,3 +31,4 @@ if (empty($fetch)) {
 }
 $db = null;
 require "footer.php";
+//Header and footer are displayed if an error message keeps the user from continuing

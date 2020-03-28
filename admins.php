@@ -21,13 +21,14 @@ require "session-auth.php";
     $cmd = $db->prepare($sql);
     $cmd->execute();
     $arr = $cmd->fetchAll();
+    //gets an array of all data from cms_users
     foreach ($arr as $admin) {
       echo "</tr><td>" . $admin['username'] . "</td>";
       echo "<td><a href=edit-admin.php?id=" . $admin['userId'] . ">Edit</a></td>";
       echo '<td><a onclick="return confirmDelete(\'' . $admin["username"] . '\',\'';
       echo $admin['userId'] . '\',\'' . $_SESSION["userId"] . '\');"';
       echo "href=delete-admin.php?user=" . $admin['userId'] . ">Delete</a><tr>";
-    }
+    } //echo all the usernames plus edit and delete links with appropriate variables.
     $db = null;
     ?>
   </tbody>
@@ -37,8 +38,10 @@ require "session-auth.php";
     if (currentId == sessionId) {
       alert(`You cannot delete the current user.`);
       return false;
+      //if you are the user you want to delete, give an alert and prevent that from happening
     } else {
       return confirm(`Are you sure you want to delete ${username}?`);
+      //if you want to delete another admin, show confirmation pop-up
     }
   }
 </script>

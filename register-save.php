@@ -38,3 +38,4 @@ if (empty($user) || empty($pass) || empty($passConf)) {
   $db = null;
 }
 require "footer.php";
+//Header and footer are displayed if an error message keeps the user from continuing

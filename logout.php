@@ -1,8 +1,6 @@
 <?php
 session_start();
-$_SESSION["userId"] = "";
-$_SESSION["username"] = "";
 session_unset();
 session_destroy();
 header("location:login.php");
-//opens the session, unsets the variable, destroys section, links back to index
+//opens the session, unsets the variables, destroys session, links back to login

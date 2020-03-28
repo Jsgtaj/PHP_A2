@@ -8,6 +8,7 @@ $username = $_POST["username"];
 $oldPassword = $_POST["oldPassword"];
 $newPassword = $_POST["password"];
 $newPasswordConfirm = $_POST["passwordConfirm"];
+//Setting variables from all of the values POSTed, plus the id from GET
 echo "<a href=edit-admin.php?id=" . $userId . ">Back to edit page</a><br>";
 //Link back to edit page if user has error
 
@@ -16,6 +17,7 @@ $get = $db->prepare($sqlGet);
 $get->bindParam(":userId", $userId, PDO::PARAM_INT);
 $get->execute();
 $getRes = $get->fetch();
+//getting an array using the userId to check if the user exists
 if (empty($getRes)) {
   echo "<p>An error occured. The admin you are trying to edit does not exist in the database.</p>";
   //If the userId is not found, echo an error message.
@@ -39,9 +41,11 @@ if (empty($getRes)) {
     $set->bindParam(":newPasswordHash", $newPasswordHash, PDO::PARAM_STR, 255);
     $set->bindParam(":userId", $userId, PDO::PARAM_INT);
     $set->execute();
+    //Updates the database with new values
     header("location:admins.php");
     //Link back to admins page
   }
 }
 $db = null;
 require "footer.php";
+//Header and footer are displayed if an error message keeps the user from continuing
