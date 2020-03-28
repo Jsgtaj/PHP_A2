@@ -20,7 +20,6 @@ require "header.php";
     <!--fields to be posted upon registration-->
   </fieldset>
 </form>
-</body>
 <?php
 require "footer.php";
 // Adding footer

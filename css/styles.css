@@ -43,9 +43,11 @@ h2 {
   font-size: 2.9rem;
 }
 p {
-  margin-block-start: 1rem;
   text-align: center;
   font-size: 2rem;
+}
+section p {
+  margin-block-start: 0.5rem;
 }
 a,
 a:link,
@@ -154,7 +156,7 @@ nav p {
 nav ul li a,
 nav ul li a:link,
 nav ul li a:visited {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   font-weight: 900;
   color: inherit;
   text-decoration: none;
@@ -179,11 +181,13 @@ footer p {
 /*_____________________________Footer End_____________________________*/
 /*_____________________________Tables_____________________________*/
 table {
+  margin: auto;
   border-spacing: 0;
   text-align: center;
   border-collapse: collapse;
   border-width: 0;
   font-size: 2rem;
+  width: 80%;
 }
 table th {
   line-height: 8rem;
@@ -216,7 +220,7 @@ legend {
 form * {
   border: none;
   margin: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
 }
 form fieldset {
   display: flex;
@@ -230,6 +234,7 @@ form button {
   padding: 0.6rem;
   border-radius: 0.2rem;
   background-color: #cac2ce;
+  margin-bottom: 1.1rem;
 }
 form p {
   font-size: 1.6rem;
@@ -259,7 +264,7 @@ select:-webkit-autofill:focus {
   box-shadow: inherit;
   -webkit-box-shadow: inherit;
   font-size: 1.9rem !important;
-  transition: background-color 10000s ease-in 0s;
+  transition: background-color 10000s ease-in 10000s;
   /*_____Remove autofill styling_____*/
 }
 /*_____________________________Forms End_____________________________*/

@@ -1,34 +1,54 @@
-<?php
-$user = $_POST["username"];
-$pass = $_POST["password"];
-//Getting the posted variables
-require "db.php";
-//linking the pdo setup
-$sql = "SELECT * FROM cms_users WHERE username = :user";
-$cmd = $db->prepare($sql);
-$cmd->bindParam(":user", $user, PDO::PARAM_STR, 50);
-$cmd->execute();
-$fetch = $cmd->fetch();
-//selecting one row of the table cms_users
-if (empty($fetch)) {
-  echo "<a href='login.php'>Back to login</a><br>Invalid username.";
-  exit();
-  //if there is no username match, exit and echo "Invalid username"
-} else if (!password_verify($pass, $fetch["password"])) {
-  echo  "<a href='login.php'>Back to login</a><br>Username exists, Invalid password.";
-  exit();
-  //if there is a username match, but the passwords don't match, 
-  //exit and echo "Username exists, Invalid password"
-} else {
-  session_start();
-  $_SESSION["userId"] = $fetch["userId"];
-  $_SESSION["username"] = $fetch["username"];
-  $_SESSION["panel"] = false;
-  header("location:index.php");
-  /*if there is a username and password match, start a session
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html {
+      font-size: 24px;
+    }
+  </style>
+  <title>Error</title>
+</head>
+
+<body>
+
+  <?php
+  $user = $_POST["username"];
+  $pass = $_POST["password"];
+  //Getting the posted variables
+  require "db.php";
+  //linking the pdo setup
+  $sql = "SELECT * FROM cms_users WHERE `username` = :user";
+  $cmd = $db->prepare($sql);
+  $cmd->bindParam(":user", $user, PDO::PARAM_STR, 50);
+  $cmd->execute();
+  $fetch = $cmd->fetch();
+  //selecting one row of the table cms_users
+  if (empty($fetch)) {
+    echo "<a href='login.php'>Back to login</a><br>Invalid username.";
+    exit();
+    //if there is no username match, exit and echo "Invalid username"
+  } else if (!password_verify($pass, $fetch["password"])) {
+    echo  "<a href='login.php'>Back to login</a><br>Username exists, Invalid password.";
+    exit();
+    //if there is a username match, but the passwords don't match, 
+    //exit and echo "Username exists, Invalid password"
+  } else {
+    session_start();
+    $_SESSION["userId"] = $fetch["userId"];
+    $_SESSION["username"] = $fetch["username"];
+    $_SESSION["panel"] = false;
+    header("location:index.php");
+    /*if there is a username and password match, start a session
   make the session variable userId the user's Id, get username for display
   control panel variable is false on login*/
-  //link to index
-}
-$db = null;
-//close db connection
+    //link to index
+  }
+  $db = null;
+  //close db connection
+  ?>
+</body>
+
+</html>
