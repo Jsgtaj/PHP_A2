@@ -71,6 +71,7 @@ a:active {
 /*_____________________________General End_____________________________*/
 /*_____________________________Header_____________________________*/
 nav {
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -140,10 +141,13 @@ nav ul {
   list-style: none;
   margin: auto;
   margin-right: 2rem;
+  padding-inline-start: 2rem;
 }
 
 nav ul li {
-  padding: 2rem 2rem 2rem 2rem;
+  display: flex;
+  height: 3rem;
+  padding: 2rem 1vw 2rem 1vw;
   border-left: #111 solid 0.2rem;
 }
 nav ul li:last-of-type {
@@ -151,11 +155,11 @@ nav ul li:last-of-type {
 }
 
 nav p {
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 2rem 1vw 2rem 1vw;
   font-weight: 900;
   text-align: left;
   font-size: 1.8rem;
-  line-height: 1.8rem;
+  line-height: 2rem;
   margin-block-start: 0rem;
   margin-block-end: 0rem;
   border-left: #111 solid 0.2rem;
@@ -164,6 +168,8 @@ nav p {
 nav ul li a,
 nav ul li a:link,
 nav ul li a:visited {
+  text-align: center;
+  align-self: center;
   font-size: 2.1rem;
   font-weight: 900;
   color: inherit;
@@ -187,33 +193,33 @@ footer p {
   font-weight: 900;
 }
 /*_____________________________Footer End_____________________________*/
-/*_____________________________Tables_____________________________*/
-table {
+/*_____________________________Grid Table_____________________________*/
+.grid {
   margin: auto;
-  border-spacing: 0;
-  text-align: center;
-  border-collapse: collapse;
-  border-width: 0;
+  width: 80vw;
   font-size: 2rem;
-  width: 80%;
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
-table th {
-  line-height: 8rem;
-  border-left: #111 solid 0.2rem;
-}
-table th:first-of-type {
-  line-height: 8rem;
-  border-left: 0;
-}
-table td {
-  padding: 2rem;
+.grid div {
+  line-height: 4rem;
   border-top: #111 solid 0.2rem;
+}
+.grid div:nth-of-type(3n),
+div:nth-of-type(3n-1) {
   border-left: #111 solid 0.2rem;
 }
-table td:first-of-type {
-  border-left: 0;
+.grid div:nth-of-type(1),
+.grid div:nth-of-type(2),
+.grid div:nth-of-type(3) {
+  line-height: 5rem;
+  border-top: 0;
+  font-weight: bolder;
+  font-size: 2.1rem;
 }
-/*_____________________________Tables End_____________________________*/
+/*_____________________________Grid Table End_____________________________*/
 /*_____________________________Forms_____________________________*/
 form {
   font-size: 1.9rem;
