@@ -47,11 +47,11 @@ h1 {
   margin-bottom: 1.4rem;
 }
 h2 {
-  font-size: 2.9rem;
+  font-size: 2.6rem;
 }
 p {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.95rem;
 }
 section p {
   margin-block-start: 0.5rem;
@@ -72,6 +72,7 @@ a:active {
 /*_____________________________Header_____________________________*/
 nav {
   width: 100vw;
+  height: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -130,9 +131,9 @@ nav .p1 li:nth-last-of-type(1) {
 }
 /*___Nav highlighting end___*/
 nav img {
-  max-height: 80px;
+  max-height: 74px;
   width: auto;
-  margin: 1rem 4rem 1rem 4rem;
+  margin: 1rem 2rem 1rem 2rem;
 }
 nav ul {
   display: flex;
@@ -147,7 +148,7 @@ nav ul {
 nav ul li {
   display: flex;
   height: 3rem;
-  padding: 2rem 1vw 2rem 1vw;
+  padding: 2rem 1.2vw 2rem 1.2vw;
   border-left: #111 solid 0.2rem;
 }
 nav ul li:last-of-type {
@@ -155,15 +156,17 @@ nav ul li:last-of-type {
 }
 
 nav p {
-  padding: 2rem 1vw 2rem 1vw;
-  font-weight: 900;
-  text-align: left;
-  font-size: 1.8rem;
-  line-height: 2rem;
+  position: absolute;
+  right: 0vw;
+  top: 92px;
+  background-color: #af74c9;
+  padding: 1rem;
+  border-radius: 0 0 0 1rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
   margin-block-start: 0rem;
   margin-block-end: 0rem;
-  border-left: #111 solid 0.2rem;
-  border-right: #111 solid 0.2rem;
 }
 nav ul li a,
 nav ul li a:link,

@@ -2,7 +2,9 @@
 $title = "Register";
 $position = "p2";
 require "header.php";
+require "session-auth-reverse.php";
 // Adding header, setting title, position used for highlighting in header
+// If someone's already logged in, send them to the control panel
 ?>
 <h1>Sign up below!</h1>
 <form action="register-save.php" method="POST">

@@ -14,11 +14,11 @@ session_start(); ?>
 
 <body>
   <nav>
-    <a href="login.php"><img src="img/php_web_builder_logo.png" alt="php web builder logo"></a>
+    <a href="index.php"><img src="img/php_web_builder_logo.png" alt="php web builder logo"></a>
     <?php
     if (!empty($_SESSION['userId'])) {
       $userId = $_SESSION['username'];
-      echo "<p>Admin:<br>$userId</p>";
+      echo "<p>Logged in as: $userId</p>";
     }
     ?>
     <ul id="i<?php /*echo $id*/ ?>" class="<?php echo $position ?>">

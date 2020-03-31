@@ -2,7 +2,9 @@
 $title = "Login";
 $position = "p1";
 require "header.php";
+require "session-auth-reverse.php";
 // Adding header, setting title, position used for highlighting in header
+// If someone's already logged in, send them to the control panel
 ?>
 <h1>Log in below!</h1>
 <form action="login-validate.php" method="POST">
