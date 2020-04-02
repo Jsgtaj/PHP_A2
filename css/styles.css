@@ -256,11 +256,12 @@ form button {
 form p {
   font-size: 1.6rem;
   margin-top: 3rem;
+  margin-bottom: 1.4rem;
 }
 form button {
   margin: auto;
   padding: 0.6rem 3rem 0.6rem 3rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   background-color: #af74c9;
 }
 form button:focus,
@@ -282,6 +283,6 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: inherit;
   font-size: 1.9rem !important;
   transition: background-color 10000s ease-in 10000s;
-  /*_____Remove autofill styling_____*/
 }
+/*_____Remove autofill styling_____*/
 /*_____________________________Forms End_____________________________*/

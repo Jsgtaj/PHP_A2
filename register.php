@@ -18,6 +18,7 @@ require "session-auth-reverse.php";
     <input name="passwordConfirm" type="password" placeholder="confirm password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
     <p>Passwords need at least one number, one lowercase letter,<br>
       one uppercase letter, and have to be at least 8 characters long.</p>
+    <div class="g-recaptcha" data-sitekey="6LcoOeYUAAAAAA86dABMlRPwdrzLN1HB2mJPHFp7"></div>
     <button type="submit">Sign up</button>
     <!--fields to be posted upon registration-->
   </fieldset>

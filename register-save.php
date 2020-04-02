@@ -2,6 +2,20 @@
 require "header.php";
 echo "<a href='register.php'>Back to regisration</a><br>";
 //Link back to registration if user has error
+
+$apiPostArray = array();
+$apiPostArray["secret"] = "6LcoOeYUAAAAALERx6nzUAeGQ4p9-dk6AbZFlxye";
+$apiPostArray["response"] = $_POST["g-recaptcha-response"];
+$apiRequest = curl_init();
+curl_setopt($apiRequest, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+curl_setopt($apiRequest, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($apiRequest, CURLOPT_POST, true);
+curl_setopt($apiRequest, CURLOPT_POSTFIELDS, $apiPostArray);
+$apiResult = curl_exec($apiRequest);
+curl_close($apiRequest);
+$resultArray = json_decode($apiResult, true);
+// POSTing recapcha verification to google
+
 $user = $_POST["username"];
 $pass = $_POST["password"];
 $passConf = $_POST["passwordConfirm"];
@@ -13,6 +27,9 @@ if (empty($user) || empty($pass) || empty($passConf)) {
 } else if ($pass != $passConf) {
   echo "<p>Passwords do not match.</p>";
   //If passwords aren't the same, echo "Passwords do not match."
+} else if ($resultArray["success"] == false) {
+  echo "<p>The recaptcha verification wasn't successful.</p>";
+  //If recaptcha wasn't correct, echo "The recaptcha verification wasn't successful."
 } else {
   require "db.php";
   $sql = "SELECT username FROM cms_users WHERE `username` = :user";
