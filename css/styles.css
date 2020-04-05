@@ -68,6 +68,13 @@ a:active {
   font-weight: bold;
   text-decoration: underline;
 }
+img {
+  max-height: 74px;
+  width: auto;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
 /*_____________________________General End_____________________________*/
 /*_____________________________Header_____________________________*/
 nav {
@@ -257,6 +264,9 @@ form p {
   font-size: 1.6rem;
   margin-top: 2rem;
   margin-bottom: 1.4rem;
+}
+form input[type="file"] {
+  margin-top: 1.8rem;
 }
 form button {
   margin: auto;

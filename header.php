@@ -15,7 +15,12 @@ session_start(); ?>
 
 <body>
   <nav>
-    <a href="index.php"><img src="img/php_web_builder_logo.png" alt="php web builder logo"></a>
+    <a href="index.php"><img src=<?php
+                                  if (file_exists("img/php_web_builder_logo.png")) {
+                                    echo "img/php_web_builder_logo.png";
+                                  } else {
+                                    echo "img/php_web_builder_logo.jpeg";
+                                  } ?> alt="php web builder logo"></a>
     <?php
     if (!empty($_SESSION['userId'])) {
       $userId = $_SESSION['username'];
