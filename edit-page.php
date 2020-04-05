@@ -33,7 +33,7 @@ echo '<form action="edit-page-save.php?id="' .  $pageId . '" method="POST">';
   <textarea <?php if ($pageId != -1) {
               //If the page exists already, echo content
               echo 'value="' . $result["content"] . '"';
-            } ?> name="content" rows="12" cols="100" maxlength="4095" placeholder="your page's content" style="resize:none" equired></textarea>
+            } ?> name="content" rows="10" cols="100" maxlength="4095" placeholder="your page's content" style="resize:none" equired></textarea>
   <button type="submit"><?php
                         if ($pageId != -1) {
                           echo "Update";

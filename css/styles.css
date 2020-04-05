@@ -205,7 +205,9 @@ footer p {
 /*_____________________________Footer End_____________________________*/
 /*_____________________________Grid Table_____________________________*/
 .grid {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
   width: 80vw;
   font-size: 2rem;
   text-align: center;
@@ -255,6 +257,7 @@ form fieldset {
 form input,
 form textarea,
 form button {
+  font-family: inherit;
   font-size: inherit;
   padding: 0.6rem;
   border-radius: 0.2rem;
