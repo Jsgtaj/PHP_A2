@@ -253,6 +253,7 @@ form fieldset {
   margin: 0;
 }
 form input,
+form textarea,
 form button {
   font-size: inherit;
   padding: 0.6rem;

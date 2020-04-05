@@ -1,7 +1,7 @@
 <?php
 require "header.php";
 require "session-auth.php";
-echo "<a href='register.php'>Back to regisration</a><br>";
+echo "<a href='logo.php'>Back to logo upload</a><br>";
 //checks if user is allowed to go here
 $logo = $_FILES["upload"];
 $logoTmpName = $logo["tmp_name"];
