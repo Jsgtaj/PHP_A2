@@ -70,11 +70,11 @@ a:active {
   text-decoration: underline;
 }
 img {
-  max-height: 74px;
+  max-height: 148px;
   width: auto;
   margin: auto;
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.2rem;
 }
 /*_____________________________General End_____________________________*/
 /*_____________________________Header_____________________________*/
@@ -258,7 +258,8 @@ form fieldset {
 }
 form input,
 form textarea,
-form button {
+form button,
+form label[for="upload"] {
   font-family: inherit;
   font-size: inherit;
   padding: 0.6rem;
@@ -272,9 +273,10 @@ form p {
   margin-bottom: 1.4rem;
 }
 form input[type="file"] {
-  margin-top: 1.8rem;
+  display: none;
 }
-form button {
+form button,
+form label[for="upload"] {
   margin: auto;
   padding: 0.6rem 3rem 0.6rem 3rem;
   margin-top: 2rem;
@@ -282,7 +284,10 @@ form button {
 }
 form button:focus,
 form button:hover,
-form button:active {
+form button:active,
+form label[for="upload"]:focus,
+form label[for="upload"]:hover,
+form label[for="upload"]:active {
   background-color: #9341b6;
 }
 /*_____Remove autofill styling_____*/

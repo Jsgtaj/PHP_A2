@@ -18,11 +18,21 @@ require "session-auth.php";
 <form action="logo-upload.php" method="POST" enctype="multipart/form-data">
   <fieldset>
     <legend>Upload logo:</legend>
-    <label for="upload">Choose a new logo:</label>
-    <input type="file" name=upload>
+    <label for="upload">Choose a New Logo</label>
+    <input type="file" name=upload id=upload>
     <button>Upload</button>
   </fieldset>
 </form>
+<script>
+  //script to update 'button's' text content when the file is picked.
+  const file = document.querySelector("input[type='file']");
+  const uploadButton = document.querySelector("label[for='upload']");
+
+  function nameChange() {
+    uploadButton.textContent = `File: ${file.files[0].name}`;
+  }
+  file.addEventListener("change", nameChange);
+</script>
 <?php
 require "footer.php";
 // Adding footer
