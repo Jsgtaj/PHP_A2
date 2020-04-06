@@ -7,17 +7,21 @@ require "session-auth.php";
 //checks if user is allowed to go here
 $pageId = $_GET["id"];
 if ($pageId != -1) {
-  //If the page exists already, fetch page data
+  //If the page is not new, fetch page data
   require "db.php";
   $sql = "SELECT title, content FROM cms_pages WHERE :pageId = `pageId`";
   $cmd = $db->prepare($sql);
   $cmd->bindParam(":pageId", $pageId, PDO::PARAM_INT);
   $cmd->execute();
   $result = $cmd->fetch();
-  //Yhen display edit title h1
+  if (empty($result)) {
+    // If the page doesn't exist, link back to pages list
+    header("location:pages.php");
+  }
+  //Display this page's title in h1
   echo '<h1>Edit ' . $result["title"] . ' Page</h1>';
 } else {
-  //If page doesn't exist, display new title h1
+  //If page doesn't exist, display a new title h1
   echo '<h1>Create a New Page</h1>';
 }
 echo '<form action="edit-page-save.php?id=' .  $pageId . '" method="POST">';

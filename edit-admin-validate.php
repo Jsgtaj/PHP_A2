@@ -19,7 +19,7 @@ $get->execute();
 $getRes = $get->fetch();
 //getting an array using the userId to check if the user exists
 if (empty($getRes)) {
-  echo "<p>An error occured. The admin you are trying to edit does not exist in the database.</p>";
+  echo "<p>An error occurred. The admin you are trying to edit does not exist in the database.</p>";
   //If the userId is not found, echo an error message.
 } else {
   if (empty($username) || empty($oldPassword) || empty($newPassword) || empty($newPasswordConfirm)) {

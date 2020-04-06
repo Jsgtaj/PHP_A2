@@ -22,7 +22,7 @@ if (!empty($arr)) {
     echo "<div>" . $page['title'] . "</div>";
     echo "<div><a href=edit-page.php?id=" . $page['pageId'] . ">Edit</a></div>";
     echo '<div><a onclick="return confirmDelete(\'' . $page["title"] . '\');"';
-    echo "href=delete-page.php?user=" . $page['pageId'] . ">Delete</a></div>";
+    echo "href=delete-page.php?id=" . $page['pageId'] . ">Delete</a></div>";
   } //echo all the page titles plus edit and delete links with appropriate variables.
   echo '</div>';
 } else {

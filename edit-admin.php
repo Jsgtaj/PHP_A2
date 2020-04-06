@@ -13,6 +13,10 @@ $cmd->bindParam(":userId", $userId, PDO::PARAM_INT);
 $cmd->execute();
 $result = $cmd->fetch();
 //Getting info about user for display here
+if (empty($result)) {
+  // If the admin doesn't exist, link back to header
+  header("location:admins.php");
+}
 ?>
 <h1>Edit <?php echo $result["username"] ?>'s Info</h1>
 <form action="edit-admin-validate.php?id=<?php echo $userId ?>" method="POST">
