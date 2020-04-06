@@ -14,7 +14,8 @@ $thisPage = $cmdCheck->fetch();
 //Checking if this page exists before deleting
 if (!empty($thisPage)) {
   //If page exists
-  $sql = "DELETE FROM `cms_pages` WHERE `pageId` = :pageId";
+  $sql = "DELETE FROM `cms_pages` WHERE `pageId` = :pageId;  ALTER TABLE cms_pages DROP pageId; ALTER TABLE cms_pages AUTO_INCREMENT = 1; ALTER TABLE cms_pages ADD pageId INT NOT NULL AUTO_INCREMENT PRIMARY KEY;";
+  //delete, alter table to reset pageId column to start at 1
   $cmd = $db->prepare($sql);
   $cmd->bindParam(":pageId", $pageId, PDO::PARAM_INT);
   $cmd->execute();

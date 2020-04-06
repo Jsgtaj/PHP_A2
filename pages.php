@@ -29,10 +29,14 @@ if (!empty($arr)) {
   //If no pages exist
   echo '<h1>Your site has no pages. Create one by clicking the link below.</h1>';
 }
+if (count($arr) <= 9) {
+  echo "<a href='edit-page.php?id=-1'>Create a new page</a>";
+} else {
+  echo "<p>You can' create more than 10 pages. Delete a page or edit an existing page.</p>";
+}
 $db = null;
 //Close the database
 ?>
-<a href='edit-page.php?id=-1'>Create a new page</a>
 <!--if this link is clicked, GET id will be -1-->
 <script>
   function confirmDelete(title) {

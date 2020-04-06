@@ -23,11 +23,11 @@ if (empty($fetch)) {
   $_SESSION["userId"] = $fetch["userId"];
   $_SESSION["username"] = $fetch["username"];
   $_SESSION["panel"] = false;
-  header("location:index.php");
+  header("location:index.php?id=1");
   /*if there is a username and password match, start a session
   make the session variable userId the user's Id, get username for display
   control panel variable is false on login*/
-  //link to index
+  //link to index page 1
 }
 $db = null;
 require "footer.php";

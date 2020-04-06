@@ -1,10 +1,13 @@
 <?php
+$_SESSION["panel"] = true;
+//Re-sets control panel variable to true if user goes to this page
 $title = "Edit Page";
 $position = "p5";
 require "header.php";
 // Adding header, setting title, position used for highlighting in header
 require "session-auth.php";
 //checks if user is allowed to go here
+
 $pageId = $_GET["id"];
 if ($pageId != -1) {
   //If the page is not new, fetch page data
