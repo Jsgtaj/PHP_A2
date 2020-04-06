@@ -15,12 +15,12 @@ if ($pageId != -1) {
   $cmd->execute();
   $result = $cmd->fetch();
   //Yhen display edit title h1
-  echo '<h1>Edit ' . $result["title"] . '\' page</h1>';
+  echo '<h1>Edit ' . $result["title"] . ' Page</h1>';
 } else {
   //If page doesn't exist, display new title h1
-  echo '<h1>Create a new page</h1>';
+  echo '<h1>Create a New Page</h1>';
 }
-echo '<form action="edit-page-save.php?id="' .  $pageId . '" method="POST">';
+echo '<form action="edit-page-save.php?id=' .  $pageId . '" method="POST">';
 ?>
 <fieldset>
   <legend>Page Info:</legend>
@@ -30,10 +30,11 @@ echo '<form action="edit-page-save.php?id="' .  $pageId . '" method="POST">';
             echo 'value="' . $result["title"] . '"';
           } ?> name="title" type="text" maxlength="50" placeholder="your page's title" required>
   <label for="content">Page Content:</label>
-  <textarea <?php if ($pageId != -1) {
-              //If the page exists already, echo content
-              echo 'value="' . $result["content"] . '"';
-            } ?> name="content" rows="10" cols="100" maxlength="4095" placeholder="your page's content" style="resize:none" equired></textarea>
+  <textarea name="content" rows="8" cols="100" maxlength="4095" placeholder="your page's content" style="resize:none" required>
+<?php if ($pageId != -1) {
+  //If the page exists already, echo content
+  echo $result["content"];
+} ?></textarea>
   <button type="submit"><?php
                         if ($pageId != -1) {
                           echo "Update";

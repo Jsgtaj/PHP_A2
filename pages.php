@@ -13,7 +13,7 @@ $arr = $cmd->fetchAll();
 //gets an array of Ids and titles from cms_pages
 if (!empty($arr)) {
   //If pages exist
-  echo '<h1>Your site\'s pages</h1>';
+  echo '<h1>Your Site\'s Pages</h1>';
   echo '<div class="grid">';
   echo '<div>Page Title</div>';
   echo '<div>Edit Page</div>';
