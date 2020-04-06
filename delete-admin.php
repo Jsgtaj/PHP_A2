@@ -2,8 +2,8 @@
 require "header.php";
 require "session-auth.php";
 //checks if user is allowed to go here
-echo "<a href='pages.php'>Back to list of pages</a><br>";
-//Link back to pages list if user has error
+echo "<a href='admins.php'>Back to list of admins</a><br>";
+//Link back to admins if user has error
 $adminId = $_GET["user"];
 require "db.php";
 $sqlCheck = "SELECT `userId` FROM `cms_users` WHERE `userId` = :adminId";
