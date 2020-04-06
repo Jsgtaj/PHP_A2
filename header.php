@@ -15,12 +15,13 @@ session_start(); ?>
 
 <body>
   <nav>
-    <a href="index.php"><img src=<?php
-                                  if (file_exists("img/php_web_builder_logo.png")) {
-                                    echo "img/php_web_builder_logo.png";
-                                  } else {
-                                    echo "img/php_web_builder_logo.jpeg";
-                                  } ?> alt="php web builder logo"></a>
+    <a href="control-panel-leave.php"><img src=<?php
+                                                if (file_exists("img/php_web_builder_logo.png")) {
+                                                  echo "img/php_web_builder_logo.png" . "?" . time();
+                                                } else {
+                                                  echo "img/php_web_builder_logo.jpeg" . "?" . time();
+                                                } //Adding time to end of images to force refresh when updated
+                                                ?> alt="Site logo"></a>
     <?php
     if (!empty($_SESSION['userId'])) {
       //If logged in, display username
@@ -30,8 +31,7 @@ session_start(); ?>
     if (!empty($id)) {
       //If page uses id to track position, echo ul with id
       echo '<ul id=i' . $id . '>';
-    }
-    if (!empty($position)) {
+    } else if (!empty($position)) {
       //If page uses classes to track position, echo ul with class
       echo '<ul class=' . $position . '>';
     } else {

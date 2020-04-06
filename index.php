@@ -1,6 +1,4 @@
 <?php
-require "header.php";
-// Adding header
 require "db.php";
 $pageId = $_GET["id"];
 $sql = "SELECT * FROM cms_pages WHERE pageId = :pageId";
@@ -12,20 +10,20 @@ if (!empty($arr)) {
   //If there are any pages
   $title = $arr["title"];
   $content = $arr["content"];
+  $id =  $arr["pageId"];
+  //setting title and id variables for the header
+  require "header.php";
+  // Adding header  
   $contentFormatted = preg_replace("/
 /", "<br>", $content);
-  $id =  $arr["pageId"];
-  //title and id will be populated by current page data
+  //replacing enters with <br>
   echo "<h1>" . $title . "</h1>";
   echo "<p>" . $contentFormatted . "</p>";
-} else if (!empty($_SESSION["userId"])) {
-  //If there are no pages and user is logged in
-  $_SESSION["panel"] = true;
-  //Re-sets control panel variable to true if user goes to this page
-  echo '<h1>Your site has no pages. Create one by clicking the link below.</h1>';
-  echo "<a href='edit-page.php?id=-1'>Create a new page</a>";
+  //echoing title and content
 } else {
-  //If there are no pages and there is no user, show nohing
+  //If there are no pages, show nothing
+  $title = "Blank Page";
+  require "header.php";
 }
 require "footer.php";
 // Adding footer

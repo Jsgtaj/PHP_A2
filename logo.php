@@ -6,14 +6,14 @@ require "header.php";
 require "session-auth.php";
 //checks if user is allowed to go here
 ?>
-<h1>Upload a new logo</h1>
+<h1>Upload a New Logo</h1>
 <p>Current logo:</p>
 <img src=<?php
           if (file_exists("img/php_web_builder_logo.png")) {
-            echo "img/php_web_builder_logo.png";
+            echo "img/php_web_builder_logo.png" . "?" . time();
           } else {
-            echo "img/php_web_builder_logo.jpeg";
-          }
+            echo "img/php_web_builder_logo.jpeg" . "?" . time();
+          } //Adding time to end of images to force refresh when updated
           ?> alt="Current Logo">
 <form action="logo-upload.php" method="POST" enctype="multipart/form-data">
   <fieldset>

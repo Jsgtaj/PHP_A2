@@ -1,4 +1,6 @@
 <?php
+$_SESSION["panel"] = true;
+//Re-sets control panel variable to true if user goes to this page
 $title = "Control Panel";
 $position = "p2";
 require "header.php";
