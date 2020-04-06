@@ -35,7 +35,7 @@ echo '<form action="edit-page-save.php?id=' .  $pageId . '" method="POST">';
             echo 'value="' . $result["title"] . '"';
           } ?> name="title" type="text" maxlength="50" placeholder="your page's title" required>
   <label for="content">Page Content:</label>
-  <textarea name="content" rows="8" cols="100" maxlength="4095" placeholder="your page's content" style="resize:none" required>
+  <textarea name="content" rows="8" cols="80" maxlength="4095" placeholder="your page's content" style="resize:none" required>
 <?php if ($pageId != -1) {
   //If the page exists already, echo content
   echo $result["content"];
