@@ -42,9 +42,16 @@ session_start(); ?>
     <!--ul id and class echoed from pages to set highlighted style-->
     <?php
     if (empty($_SESSION['userId'])) {
-      //if userId is empty, show register and log in
-      echo "<li><a href='register.php'>Register</a></li>
-      <li><a href='login.php'>Log In</a></li>";
+      //if userId is empty, show pages, register and log in
+      require "db.php";
+      $sql = "SELECT pageId, title FROM cms_pages";
+      $cmd = $db->prepare($sql);
+      $cmd->execute();
+      $arr = $cmd->fetchAll();
+      foreach ($arr as $page) {
+        echo "<li><a href='index.php?id=" . $page["pageId"] . "'>" . $page["title"] . "</a></li>";
+      }
+      echo "<li><a href='register.php'>Register</a></li><li><a href='login.php'>Log In</a></li>";
     } else {
       if ($_SESSION["panel"] == true) {
         //if user has clicked on control panel link, setting panel to true, show control panel links
