@@ -21,7 +21,7 @@ if ($pageId != -1) {
   //Display this page's title in h1
   echo '<h1>Edit ' . $result["title"] . ' Page</h1>';
 } else {
-  //If page doesn't exist, display a new title h1
+  //If page is new, display a new title h1
   echo '<h1>Create a New Page</h1>';
 }
 echo '<form action="edit-page-save.php?id=' .  $pageId . '" method="POST">';
@@ -50,6 +50,7 @@ echo '<form action="edit-page-save.php?id=' .  $pageId . '" method="POST">';
 </fieldset>
 </form>
 <?php
+$db = null;
+//Close database connection
 require "footer.php";
-// Adding footer
-?>
+//Header and footer are displayed if an error message keeps the user from continuing

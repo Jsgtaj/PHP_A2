@@ -11,7 +11,9 @@ $cmdCheck = $db->prepare($sqlCheck);
 $cmdCheck->bindParam(":pageId", $pageId, PDO::PARAM_INT);
 $cmdCheck->execute();
 $thisPage = $cmdCheck->fetch();
+//Checking if this page exists before deleting
 if (!empty($thisPage)) {
+  //If page exists
   $sql = "DELETE FROM `cms_pages` WHERE `pageId` = :pageId";
   $cmd = $db->prepare($sql);
   $cmd->bindParam(":pageId", $pageId, PDO::PARAM_INT);
@@ -19,6 +21,7 @@ if (!empty($thisPage)) {
   header("location:pages.php");
   //Deletes the entry with the assocciated id, link back to pages
 } else {
+  //If page doesn't exist
   echo "<p>An error occurred. The page you wish to delete doesn't exist.</p>";
 }
 $db = null;

@@ -16,7 +16,7 @@ $result = $cmd->fetch();
 if (empty($result)) {
   // If the admin doesn't exist, link back to header
   header("location:admins.php");
-}
+} //else, display edit form
 ?>
 <h1>Edit <?php echo $result["username"] ?>'s Info</h1>
 <form action="edit-admin-validate.php?id=<?php echo $userId ?>" method="POST">
@@ -38,6 +38,7 @@ if (empty($result)) {
   </fieldset>
 </form>
 <?php
+$db = null;
+//Close database connection
 require "footer.php";
-// Adding footer
-?>
+//Header and footer are displayed if an error message keeps the user from continuing

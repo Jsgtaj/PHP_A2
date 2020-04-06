@@ -30,9 +30,10 @@ if (!empty($arr)) {
   echo '<h1>Your site has no pages. Create one by clicking the link below.</h1>';
 }
 $db = null;
+//Close the database
 ?>
-
 <a href='edit-page.php?id=-1'>Create a new page</a>
+<!--if this link is clicked, GET id will be -1-->
 <script>
   function confirmDelete(title) {
     return confirm(`Are you sure you want to delete the ${title} page?`);

@@ -11,7 +11,9 @@ $cmdCheck = $db->prepare($sqlCheck);
 $cmdCheck->bindParam("adminId", $adminId, PDO::PARAM_INT);
 $cmdCheck->execute();
 $arrCheck = $cmdCheck->fetch();
+//Checking if admin exists before deleting
 if (!empty($arrCheck)) {
+  //If admin exists
   $sql = "DELETE FROM `cms_users` WHERE `userId` = :adminId";
   $cmd = $db->prepare($sql);
   $cmd->bindParam(":adminId", $adminId, PDO::PARAM_INT);
@@ -19,6 +21,7 @@ if (!empty($arrCheck)) {
   header("location:admins.php");
   //Deletes the entry with the assocciated id, link back to admins
 } else {
+  //If admin doesn't exist
   echo "<p>An error occurred. The admin you wish to delete doesn't exist.</p>";
 }
 $db = null;

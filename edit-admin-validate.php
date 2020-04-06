@@ -11,7 +11,6 @@ $newPasswordConfirm = $_POST["passwordConfirm"];
 //Setting variables from all of the values POSTed, plus the id from GET
 echo "<a href=edit-admin.php?id=" . $userId . ">Back to edit page</a><br>";
 //Link back to edit page if user has error
-
 $sqlGet = "SELECT * FROM cms_users WHERE `userId` = :userId ";
 $get = $db->prepare($sqlGet);
 $get->bindParam(":userId", $userId, PDO::PARAM_INT);
@@ -47,5 +46,6 @@ if (empty($getRes)) {
   }
 }
 $db = null;
+//Close database connection
 require "footer.php";
 //Header and footer are displayed if an error message keeps the user from continuing
