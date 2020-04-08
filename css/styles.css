@@ -189,7 +189,7 @@ nav ul li a:link,
 nav ul li a:visited {
   text-align: center;
   align-self: center;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: inherit;
   text-decoration: none;
@@ -324,7 +324,7 @@ select:-webkit-autofill:focus {
 /*_____Remove autofill styling_____*/
 /*_____________________________Forms End_____________________________*/
 /*_____________________________Media Queries_____________________________*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 880px) {
   /*for small tablets/mobile*/
   .vis {
     visibility: hidden;
