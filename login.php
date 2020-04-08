@@ -6,7 +6,7 @@ require "session-auth-reverse.php";
 // Adding header, setting title, position used for highlighting in header
 // If someone's already logged in, send them to the control panel
 ?>
-<h1>Log in below!</h1>
+<h1>Log In Below!</h1>
 <form action="login-validate.php" method="POST">
   <fieldset>
     <legend>User Info:</legend>

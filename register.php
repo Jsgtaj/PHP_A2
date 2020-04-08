@@ -6,7 +6,7 @@ require "session-auth-reverse.php";
 // Adding header, setting title, position used for highlighting in header
 // If someone's already logged in, send them to the control panel
 ?>
-<h1>Sign up below!</h1>
+<h1>Sign Up Below!</h1>
 <form action="register-save.php" method="POST">
   <fieldset>
     <legend>User Info:</legend>

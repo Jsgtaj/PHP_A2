@@ -1,3 +1,29 @@
+/*_____________________________Font Faces_____________________________*/
+@font-face {
+  font-family: "signika";
+  src: url("../fonts/signika-bold-webfont.woff2") format("woff2"), url("../fonts/signika-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "signika";
+  src: url("../fonts/signika-light-webfont.woff2") format("woff2"), url("../fonts/signika-light-webfont.woff") format("woff");
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "signika";
+  src: url("../fonts/signika-regular-webfont.woff2") format("woff2"), url("../fonts/signika-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "signika";
+  src: url("../fonts/signika-semibold-webfont.woff2") format("woff2"), url("../fonts/signika-semibold-webfont.woff") format("woff");
+  font-weight: bolder;
+  font-style: normal;
+}
+/*_____________________________Font Faces End_____________________________*/
 /*_____________________________General_____________________________*/
 html {
   height: 100%;
@@ -7,6 +33,9 @@ html {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 } /*root font size, family set*/
 body {
+  background-image: url("../img/bg.jpg");
+  /*Photo by Aenic from Pexels*/
+  background-size: cover;
   font-size: 1.8rem;
   color: #111;
   height: 100%;
@@ -17,8 +46,11 @@ body {
   padding: 0;
 }
 .wrapper {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: auto;
+  width: 80vw;
+  background-color: #fefefe;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -37,6 +69,8 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "signika", "Inter", Arial, Helvetica, sans-serif;
+  font-weight: normal;
   font-size: 2rem;
   margin-bottom: 1rem;
   margin-block-start: 0rem;
@@ -66,7 +100,6 @@ a:focus,
 a:hover,
 a:active {
   color: #862aad;
-  font-weight: bold;
   text-decoration: underline;
 }
 img {
@@ -152,6 +185,8 @@ nav img {
   margin: 1rem 2rem 1rem 2rem;
 }
 nav ul {
+  font-family: "signika", "Inter", Arial, Helvetica, sans-serif;
+  font-weight: normal;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -164,7 +199,7 @@ nav ul {
 nav ul li {
   display: flex;
   height: 3rem;
-  padding: 2rem 1.2vw 2rem 1.2vw;
+  padding: 2rem 1vw 2rem 1vw;
   border-left: #111 solid 0.2rem;
 }
 nav ul li:last-of-type {
@@ -174,11 +209,11 @@ nav ul li:last-of-type {
 nav p {
   position: absolute;
   right: 0vw;
-  top: 92px;
+  top: 9.19rem;
   background-color: #af74c9;
   padding: 1rem;
   border-radius: 0 0 0 1rem;
-  font-weight: 600;
+  font-weight: normal;
   text-align: center;
   font-size: 1.5rem;
   margin-block-start: 0rem;
@@ -189,8 +224,7 @@ nav ul li a:link,
 nav ul li a:visited {
   text-align: center;
   align-self: center;
-  font-size: 1.8rem;
-  font-weight: 900;
+  font-size: 1.95rem;
   color: inherit;
   text-decoration: none;
 }
@@ -203,13 +237,13 @@ nav ul li a:active {
 /*_____________________________Header End_____________________________*/
 /*_____________________________Footer_____________________________*/
 footer {
+  font-family: "signika", "Inter", Arial, Helvetica, sans-serif;
   display: flex;
   background-color: #9341b6;
   justify-content: center;
 }
 footer p {
   font-size: 1.5rem;
-  font-weight: 900;
 }
 /*_____________________________Footer End_____________________________*/
 /*_____________________________Grid Table_____________________________*/
@@ -344,7 +378,7 @@ select:-webkit-autofill:focus {
     align-items: stretch;
     padding: 1rem 0rem 0rem 0rem;
     border-radius: 0 0 0 1rem;
-    z-index: 1;
+    z-index: 2;
     margin-right: 0;
   }
   nav ul li:first-of-type {
