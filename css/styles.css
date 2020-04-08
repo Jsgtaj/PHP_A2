@@ -45,7 +45,7 @@ h6 {
 }
 h1 {
   font-size: 3.2rem;
-  margin-bottom: 1.4rem;
+  margin: 0.5rem 0 1rem 0;
 }
 h2 {
   font-size: 2.6rem;
@@ -200,57 +200,6 @@ nav ul li a:active {
   color: #000;
   text-decoration: underline;
 }
-@media screen and (max-width: 800px) {
-  /*for small tablets/mobile*/
-  .vis {
-    visibility: hidden;
-  }
-  .bgVis {
-    background: none;
-  }
-  .hamb {
-    display: inline;
-  }
-  nav ul {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #9341b6;
-    flex-direction: column-reverse;
-    align-items: stretch;
-    padding: 1rem 0rem 0rem 0rem;
-    z-index: 1;
-    margin-right: 0;
-  }
-  nav ul li {
-    display: flex;
-    justify-content: inherit;
-    padding: 0rem 3rem 0rem 3rem;
-    border: unset;
-    border-bottom: #111 solid 0.2rem;
-  }
-
-  nav ul li:last-of-type {
-    border: unset;
-    border-bottom: #111 solid 0.2rem;
-    border-top: #111 solid 0.2rem;
-  }
-
-  nav ul li a,
-  nav ul li a:link,
-  nav ul li a:visited,
-  nav ul li a:focus,
-  nav ul li a:hover,
-  nav ul li a:active {
-    color: #000;
-    text-decoration: none;
-  }
-  nav p {
-    right: unset;
-    left: 0vw;
-    border-radius: 0 0 1rem 0;
-  }
-}
 /*_____________________________Header End_____________________________*/
 /*_____________________________Footer_____________________________*/
 footer {
@@ -267,8 +216,8 @@ footer p {
 .grid {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
   width: 60vw;
   font-size: 2rem;
   align-items: stretch;
@@ -278,8 +227,8 @@ footer p {
   grid-template-columns: repeat(3, 1fr);
 }
 .grid div {
-  padding: 1rem 0 1rem 0;
-  line-height: 2rem;
+  padding: 1rem 0.1rem 1rem 0.1rem;
+  line-height: 2.1rem;
   border-top: #111 solid 0.2rem;
 }
 .grid div:nth-of-type(3n),
@@ -313,6 +262,7 @@ form * {
   margin: auto;
   margin-bottom: 0.3rem;
 }
+
 form fieldset {
   display: flex;
   flex-direction: column;
@@ -329,6 +279,9 @@ form label[for="upload"] {
   border-radius: 0.2rem;
   background-color: #cac2ce;
   margin-bottom: 1.1rem;
+}
+form textarea {
+  width: 70vw;
 }
 form p {
   font-size: 1.6rem;
@@ -370,3 +323,59 @@ select:-webkit-autofill:focus {
 }
 /*_____Remove autofill styling_____*/
 /*_____________________________Forms End_____________________________*/
+/*_____________________________Media Queries_____________________________*/
+@media screen and (max-width: 800px) {
+  /*for small tablets/mobile*/
+  .vis {
+    visibility: hidden;
+  }
+  .bgVis {
+    background: none;
+  }
+  .hamb {
+    display: inline;
+  }
+  nav ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #9341b6;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 1rem 0rem 0rem 0rem;
+    border-radius: 0 0 0 1rem;
+    z-index: 1;
+    margin-right: 0;
+  }
+  nav ul li:first-of-type {
+    border-radius: 0 0 0 1rem;
+  }
+  nav ul li {
+    display: flex;
+    justify-content: inherit;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    border: unset;
+    border-bottom: #111 solid 0.2rem;
+  }
+
+  nav ul li:last-of-type {
+    border: unset;
+    border-bottom: #111 solid 0.2rem;
+    border-top: #111 solid 0.2rem;
+  }
+  nav ul li a,
+  nav ul li a:link,
+  nav ul li a:visited,
+  nav ul li a:focus,
+  nav ul li a:hover,
+  nav ul li a:active {
+    color: #000;
+    text-decoration: none;
+  }
+  nav p {
+    right: unset;
+    left: 0vw;
+    border-radius: 0 0 1rem 0;
+  }
+}
+/*_____________________________Media Queries End_____________________________*/

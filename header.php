@@ -52,7 +52,7 @@ session_start(); ?>
       foreach ($arr as $page) {
         echo "<li class='vis'><a href='index.php?id=" . $page["pageId"] . "'>" . $page["title"] . "</a></li>";
       }
-      echo "<li class='vis'><a href='register.php'>Register</a></li><li><a href='login.php'>Log In</a></li>";
+      echo "<li class='vis'><a href='register.php'>Register</a></li><li class='vis'><a href='login.php'>Log In</a></li>";
     } else {
       if ($_SESSION["panel"] == true) {
         //if user has clicked on control panel link, setting panel to true, show control panel links
