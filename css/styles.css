@@ -361,7 +361,7 @@ select:-webkit-autofill:focus {
 @media screen and (max-width: 880px) {
   /*for small tablets/mobile*/
   .vis {
-    visibility: hidden;
+    display: none;
   }
   .bgVis {
     background: none;
