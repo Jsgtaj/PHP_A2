@@ -9,6 +9,7 @@ session_start(); ?>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="js/nav.js" async defer></script>
   <title><?php echo $title ?></title>
   <!--Title is echoed from body pages-->
 </head>
@@ -30,13 +31,13 @@ session_start(); ?>
     }
     if (!empty($id)) {
       //If page uses id to track position, echo ul with id
-      echo '<ul id=i' . $id . '>';
+      echo '<ul id=i' . $id . ' class="bgVis">';
     } else if (!empty($position)) {
       //If page uses classes to track position, echo ul with class
-      echo '<ul class=' . $position . '>';
+      echo '<ul class="' . $position . ' bgVis">';
     } else {
       //If page has no class or id
-      echo '<ul>';
+      echo '<ul class="bgVis">';
     }
     ?>
     <!--ul id and class echoed from pages to set highlighted style-->
@@ -49,17 +50,17 @@ session_start(); ?>
       $cmd->execute();
       $arr = $cmd->fetchAll();
       foreach ($arr as $page) {
-        echo "<li><a href='index.php?id=" . $page["pageId"] . "'>" . $page["title"] . "</a></li>";
+        echo "<li class='vis'><a href='index.php?id=" . $page["pageId"] . "'>" . $page["title"] . "</a></li>";
       }
-      echo "<li><a href='register.php'>Register</a></li><li><a href='login.php'>Log In</a></li>";
+      echo "<li class='vis'><a href='register.php'>Register</a></li><li><a href='login.php'>Log In</a></li>";
     } else {
       if ($_SESSION["panel"] == true) {
         //if user has clicked on control panel link, setting panel to true, show control panel links
-        echo "<li><a href='admins.php'>Administrators</a></li>
-          <li><a href='pages.php'>Pages</a></li>
-          <li><a href='logo.php'>Logo</a></li>
-          <li><a href='control-panel-leave.php'>Public Site</a></li>
-          <li><a href='control-panel.php'>Control Panel</a></li>";
+        echo "<li class='vis'><a href='admins.php'>Administrators</a></li>
+          <li class='vis'><a href='pages.php'>Pages</a></li>
+          <li class='vis'><a href='logo.php'>Logo</a></li>
+          <li class='vis'><a href='control-panel-leave.php'>Public Site</a></li>
+          <li class='vis'><a href='control-panel.php'>Control Panel</a></li>";
       } else {
         //user is not in the control panel, show pages and enter control panel link
         require "db.php";
@@ -68,14 +69,15 @@ session_start(); ?>
         $cmd->execute();
         $arr = $cmd->fetchAll();
         foreach ($arr as $page) {
-          echo "<li><a href='index.php?id=" . $page["pageId"] . "'>" . $page["title"] . "</a></li>";
+          echo "<li class='vis'><a href='index.php?id=" . $page["pageId"] . "'>" . $page["title"] . "</a></li>";
         }
-        echo "<li><a href='control-panel-enter.php'>Control Panel</a></li>";
+        echo "<li class='vis'><a href='control-panel-enter.php'>Control Panel</a></li>";
       }
       //if userId exists, show these links
-      echo "<li><a href='logout.php'>Log Out</a></li>";
+      echo "<li class='vis'><a href='logout.php'>Log Out</a></li>";
     }
     ?>
+    <img class="hamb" src="img/hamburger.svg" alt="menu">
     </ul>
   </nav>
   <section class="wrapper">

@@ -78,6 +78,14 @@ img {
 }
 /*_____________________________General End_____________________________*/
 /*_____________________________Header_____________________________*/
+.hamb {
+  padding: 0.5rem 2.8rem 0.8rem 0rem;
+  align-self: flex-end;
+  margin: 0 0 8px 0;
+  height: 6rem;
+  width: auto;
+  display: none;
+}
 nav {
   width: 100vw;
   height: 92px;
@@ -192,6 +200,57 @@ nav ul li a:active {
   color: #000;
   text-decoration: underline;
 }
+@media screen and (max-width: 800px) {
+  /*for small tablets/mobile*/
+  .vis {
+    visibility: hidden;
+  }
+  .bgVis {
+    background: none;
+  }
+  .hamb {
+    display: inline;
+  }
+  nav ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #9341b6;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 1rem 0rem 0rem 0rem;
+    z-index: 1;
+    margin-right: 0;
+  }
+  nav ul li {
+    display: flex;
+    justify-content: inherit;
+    padding: 0rem 3rem 0rem 3rem;
+    border: unset;
+    border-bottom: #111 solid 0.2rem;
+  }
+
+  nav ul li:last-of-type {
+    border: unset;
+    border-bottom: #111 solid 0.2rem;
+    border-top: #111 solid 0.2rem;
+  }
+
+  nav ul li a,
+  nav ul li a:link,
+  nav ul li a:visited,
+  nav ul li a:focus,
+  nav ul li a:hover,
+  nav ul li a:active {
+    color: #000;
+    text-decoration: none;
+  }
+  nav p {
+    right: unset;
+    left: 0vw;
+    border-radius: 0 0 1rem 0;
+  }
+}
 /*_____________________________Header End_____________________________*/
 /*_____________________________Footer_____________________________*/
 footer {
@@ -210,15 +269,17 @@ footer p {
   margin-right: auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  width: 80vw;
+  width: 60vw;
   font-size: 2rem;
+  align-items: stretch;
   text-align: center;
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 .grid div {
-  line-height: 4rem;
+  padding: 1rem 0 1rem 0;
+  line-height: 2rem;
   border-top: #111 solid 0.2rem;
 }
 .grid div:nth-of-type(3n),
@@ -228,7 +289,9 @@ div:nth-of-type(3n-1) {
 .grid div:nth-of-type(1),
 .grid div:nth-of-type(2),
 .grid div:nth-of-type(3) {
-  line-height: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   border-top: 0;
   font-weight: bolder;
   font-size: 2.1rem;
